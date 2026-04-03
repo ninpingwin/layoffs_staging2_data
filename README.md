@@ -8,12 +8,11 @@
 - If you are stuck in 564 rows when loading the .csv, upload it in json. This will work and load the 2000 entries.
 - STR_TO_DATE doesn't work for everyone. I had to use this piece of code to make it work:
   
-<p style="text-align:center;>
   UPDATE layoffs_staging2 <br>
 SET `date` = CASE<br>
             WHEN `date` IS NOT NULL AND `date` <> 'None' <br>
               THEN STR_TO_DATE(`date`, '%m/%d/%Y')<br>
             ELSE NULL<br>
             END;<br>
-            </p>
+
 
