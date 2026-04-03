@@ -9,9 +9,9 @@
 - STR_TO_DATE doesn't work for everyone. I had to use this piece of code to make it work:
   
 UPDATE layoffs_staging2 <br>
-SET `date` = CASE
-            WHEN `date` IS NOT NULL AND `date` <> 'None' 
-              THEN STR_TO_DATE(`date`, '%m/%d/%Y')
-            ELSE NULL
-            END;
+SET `date` = CASE<br>
+            WHEN `date` IS NOT NULL AND `date` <> 'None' <br>
+              THEN STR_TO_DATE(`date`, '%m/%d/%Y')<br>
+            ELSE NULL<br>
+            END;<br>
 
