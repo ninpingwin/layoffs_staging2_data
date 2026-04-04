@@ -15,5 +15,15 @@ SET `date` = CASE
                 THEN STR_TO_DATE(`date`, '%m/%d/%Y')
               ELSE NULL
              END;
-
-
+```
+- for some of you having the 'None' String instead of NULL, here's how to fix it:
+```sql
+update layoffs_staging2
+set stage = NULL
+where stage = 'None';
+```
+- in case you uploaded the original data as texts and wanna turn a column into integer, do that:
+``sql
+ALTER TABLE layoffs_staging2
+MODIFY COLUMN total_laid_off INT; 
+```
